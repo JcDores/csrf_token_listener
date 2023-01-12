@@ -43,7 +43,7 @@ Add it into the App.js inside a new React app, this way each request made in all
 
 ### Fetch API Example
 ```
-import { FetchCsrfTokenListener } from 'csrf_token_listener'
+import FetchCsrfTokenListener from 'csrf_token_listener/listeners/FetchCsrfTokenListener'
 ...
 function App() {
   FetchCsrfTokenListener('http://localhost:3000', false);
@@ -55,9 +55,23 @@ function App() {
   )
 ```
 
+```
+import { CsrfTokenListener } from 'csrf_token_listener'
+...
+function App() {
+  CsrfTokenListener('http://localhost:3000', false, 'fetch');
+
+  return (
+    <div>
+      // Write your App here
+    </div>
+  )
+```
+
+
 ### Axios API Example
 ```
-import { AxiosCsrfTokenListener } from 'csrf_token_listener'
+import AxiosCsrfTokenListener from 'csrf_token_listener/listeners/AxiosCsrfTokenListener'
 ...
 function App() {
   AxiosCsrfTokenListener('http://localhost:3000', false);
