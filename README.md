@@ -1,15 +1,16 @@
-## CSRF Token Listener (Fetch API)
-This allows to certain exchanges with a backend server to exchange CSRF Tokens, allowing more security between the server using Fetch API
+## CSRF Token Listener
+This allows to certain exchanges with a backend server to exchange CSRF Tokens, allowing more security between the server using Fetch API or Axios Client
+
+To use **axios** make sure to install it in your app as a dependency, flagged as a peerDepency only. 
 
 [Fetch API Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-
-[Axios CSRF Listener Version](https://github.com/JcDores/axios_csrf_token_listener)
+[Axios Documentation](https://github.com/axios/axios)
 
 ## Browser Support
 
 ![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_48x48.png) | ![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/main/src/firefox/firefox_48x48.png) | ![Safari](https://raw.githubusercontent.com/alrra/browser-logos/main/src/safari/safari_48x48.png) | ![Opera](https://raw.githubusercontent.com/alrra/browser-logos/main/src/opera/opera_48x48.png) | ![Edge](https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge_48x48.png) | ![IE](https://raw.githubusercontent.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png) |
 --- | --- | --- | --- | --- | --- |
-Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 11 ✗ |
+Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 11 Fetch(✗) Axios (✔) |
 
 ## Installing
 
@@ -28,17 +29,39 @@ $ yarn add csrf_token_listener
 ```
 
 # Feature
-## CsrfTokenListener
-CsrfTokenListener requires
+## FetchCsrfTokenListener/AxiosCsrfTokenListener
+FetchCsrfTokenListener/AxiosCsrfTokenListener requires
 - backendEndpoint(string), the Base Endpoint that listen for CSRF and send on every request
-- sameOrigin (Boolean), specifies if both App & Backend are working in the same Domain. If not credentials will be applied to persist session.
+- sameOrigin (Boolean), specifies if both App & Backend are working in the same Domain. If not credentials will be applied to persist session. Defaulted as true
+
+## CsrfTokenListener
+Same as FetchCsrfTokenListener/AxiosCsrfTokenListener with the addition of mode
+- mode(string), accepts only axios or fetch. Defaulted to fetch
+-
 
 ## Example
 Add it into the App.js inside a new React app, this way each request made in all sub-components and routes are catched via CsrfTokenListener
 
+### Fetch API Example
 ```
+import { FetchCsrfTokenListener } from 'csrf_token_listener'
+...
 function App() {
-  CsrfTokenListener();
+  FetchCsrfTokenListener('http://localhost:3000', false);
+
+  return (
+    <div>
+      // Write your App here
+    </div>
+  )
+```
+
+### Axios API Example
+```
+import { AxiosCsrfTokenListener } from 'csrf_token_listener'
+...
+function App() {
+  AxiosCsrfTokenListener('http://localhost:3000', false);
 
   return (
     <div>

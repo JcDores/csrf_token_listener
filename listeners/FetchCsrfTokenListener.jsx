@@ -1,8 +1,10 @@
+/* 
+  Applies a Listener to all request to a specific Endpoint using FetchAPI
+*/
 const CsrfTokenListener = (backendEndpoint, sameOrigin = true) => {
   var csrfToken = ''
   window.fetch = new Proxy(window.fetch, {
     apply(fetch, that, args) {
-        // Forward function call to the original fetch
         const url = args[0]
         let options = args[1] || {}
 
