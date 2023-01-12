@@ -1,6 +1,6 @@
 {
   "name": "csrf_token_listener",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Attaches a listener which retrieves a CSRF Token in every request made to a backend server",
   "main": "index.js",
   "scripts": {
@@ -17,5 +17,7 @@
     "url": "https://github.com/JcDores/csrf_token_listener/issues"
   },
   "homepage": "https://github.com/JcDores/csrf_token_listener#readme",
-  "dependencies": {}
+  "peerDependencies": {
+    "axios": "^1.2.2"
+  }
 }
