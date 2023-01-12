@@ -7,9 +7,11 @@ const AxiosCsrfTokenListener = async(backendUrl, sameOrigin = true) => {
     console.error('Axios not recognized')
     return 
   }
+  
   var csrfToken = ''
-  axios.defaults.withCredentials = !sameOrigin
-  axios.defaults.transformRequest = [function (data, headers) {
+  const AxiosCli = axios.default
+  AxiosCli.defaults.withCredentials = !sameOrigin
+  AxiosCli.defaults.transformRequest = [function (data, headers) {
     // Do whatever you want to transform the data
     if (this.url.startsWith(backendUrl)) {
       headers['X-CSRF-Token'] = csrfToken
@@ -17,7 +19,7 @@ const AxiosCsrfTokenListener = async(backendUrl, sameOrigin = true) => {
 
     return [data, headers];
   }]
-  axios.defaults.transformResponse = [function (data, headers) {
+  AxiosCli.defaults.transformResponse = [function (data, headers) {
     if (this.url.startsWith(backendUrl)) {
       const retrievedCsrfToken = headers.get('x-csrf-token')
       if (retrievedCsrfToken != null) {
