@@ -1,5 +1,15 @@
-## CSRF Token Listener
+## CSRF Token Listener (Fetch API)
 This allows to certain exchanges with a backend server to exchange CSRF Tokens, allowing more security between the server using Fetch API
+
+[Fetch API Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+
+[Axios CSRF Listener Version](https://github.com/JcDores/axios_csrf_token_listener)
+
+## Browser Support
+
+![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome_48x48.png) | ![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/main/src/firefox/firefox_48x48.png) | ![Safari](https://raw.githubusercontent.com/alrra/browser-logos/main/src/safari/safari_48x48.png) | ![Opera](https://raw.githubusercontent.com/alrra/browser-logos/main/src/opera/opera_48x48.png) | ![Edge](https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge_48x48.png) | ![IE](https://raw.githubusercontent.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png) |
+--- | --- | --- | --- | --- | --- |
+Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 11 ✗ |
 
 ## Installing
 
@@ -20,7 +30,7 @@ $ yarn add csrf_token_listener
 # Feature
 ## CsrfTokenListener
 CsrfTokenListener requires
-- backendEndpoint(), the Base Endpoint that listen for CSRF and send on every request
+- backendEndpoint(string), the Base Endpoint that listen for CSRF and send on every request
 - sameOrigin (Boolean), specifies if both App & Backend are working in the same Domain. If not credentials will be applied to persist session.
 
 ## Example
