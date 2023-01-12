@@ -1,0 +1,21 @@
+{
+  "name": "csrf_token_listener",
+  "version": "1.0.0",
+  "description": "Attaches a listener which retrieves a CSRF Token in every request made to a backend server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JcDores/csrf_token_listener.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JcDores/csrf_token_listener/issues"
+  },
+  "homepage": "https://github.com/JcDores/csrf_token_listener#readme",
+  "dependencies": {}
+}
