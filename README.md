@@ -37,7 +37,6 @@ FetchCsrfTokenListener/AxiosCsrfTokenListener requires
 ## CsrfTokenListener
 Same as FetchCsrfTokenListener/AxiosCsrfTokenListener with the addition of mode
 - mode(string), accepts only axios or fetch. Defaulted to fetch
--
 
 ## Example
 Add it into the App.js inside a new React app, this way each request made in all sub-components and routes are catched via CsrfTokenListener
